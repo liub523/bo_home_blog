@@ -6,44 +6,61 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="zh">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			.hero {
+				padding: 4rem 0;
+				text-align: center;
+				background: linear-gradient(to right, #4a90e2, #67b26f);
+				color: white;
+			}
+			.content {
+				max-width: 800px;
+				margin: 0 auto;
+				padding: 2rem;
+			}
+			.feature-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 2rem;
+				margin-top: 3rem;
+			}
+			.feature-item {
+				padding: 1.5rem;
+				background: #f5f5f5;
+				border-radius: 8px;
+				transition: transform 0.3s ease;
+			}
+			.feature-item:hover {
+				transform: translateY(-5px);
+			}
+		</style>
 	</head>
 	<body>
 		<Header />
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+			<section class="hero">
+				<h1>欢迎来到我的博客</h1>
+				<p>分享技术、生活和创意的个人空间</p>
+			</section>
+			<div class="content">
+				<section class="feature-grid">
+					<div class="feature-item">
+						<h2>📝 博客文章</h2>
+						<p>分享我的技术见解、学习心得和个人经验</p>
+					</div>
+					<div class="feature-item">
+						<h2>🎨 作品展示</h2>
+						<p>展示我的项目作品和创意成果</p>
+					</div>
+					<div class="feature-item">
+						<h2>👋 关于我</h2>
+						<p>了解更多关于我的故事和经历</p>
+					</div>
+				</section>
+			</div>
 		</main>
 		<Footer />
 	</body>
